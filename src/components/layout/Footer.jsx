@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from 'lucide-react';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function Footer() {
   const technologies = ['AWS', 'Kubernetes', 'Terraform', 'Docker', 'Linux', 'Ansible'];
@@ -29,7 +30,7 @@ export default function Footer() {
           <div className="col-lg-3 col-md-6">
             <Link href="#home" className="d-inline-block mb-3">
               <Image
-                src="/images/cloudviyug-logo.svg"
+                src={getAssetPath('/images/cloudviyug-logo.svg')}
                 alt="CloudViyug Logo"
                 width={190}
                 height={45}

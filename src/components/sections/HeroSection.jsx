@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { tickerBadges } from '@/data/navigation';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function HeroSection() {
   return (
@@ -21,7 +22,7 @@ export default function HeroSection() {
         style={{ top: '16%', left: '3%', zIndex: 1, opacity: 0.8 }}
       >
         <Image
-          src="/images/section-bg-shape-4.png"
+          src={getAssetPath('/images/section-bg-shape-4.png')}
           alt="Floating glowing asset"
           width={110}
           height={110}
@@ -35,7 +36,7 @@ export default function HeroSection() {
         style={{ top: '22%', right: '4%', zIndex: 1, opacity: 0.8 }}
       >
         <Image
-          src="/images/section-bg-shape-2.png"
+          src={getAssetPath('/images/section-bg-shape-2.png')}
           alt="Floating glowing asset"
           width={100}
           height={100}

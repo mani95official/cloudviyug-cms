@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { whatWeDoBestData } from '@/data/whatWeDoBestData';
 import { Plus, Minus } from 'lucide-react';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function WhatWeDoBestSection() {
   const [activeId, setActiveId] = useState(1);
@@ -22,7 +23,7 @@ export default function WhatWeDoBestSection() {
               style={{ minHeight: '420px' }}
             >
               <Image
-                src="/images/gallery-9.jpg"
+                src={getAssetPath('/images/gallery-9.jpg')}
                 alt="Cloud Architecture & Engineering Team"
                 width={400}
                 height={300}

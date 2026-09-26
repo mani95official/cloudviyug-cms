@@ -4,6 +4,7 @@ import Image from 'next/image';
 import SectionBadge from '@/components/ui/SectionBadge';
 import { aboutData } from '@/data/aboutData';
 import { ArrowRight, Server, CheckCircle, Clock, Activity } from 'lucide-react';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function AboutSection() {
   const getIcon = (idx) => {
@@ -33,7 +34,7 @@ export default function AboutSection() {
             >
               <div className="d-flex align-items-center justify-content-center flex-grow-1 py-3">
                 <Image
-                  src="/images/what-we-do-img.png"
+                  src={getAssetPath('/images/what-we-do-img.png')}
                   alt="Cloud-First People-Focused"
                   width={340}
                   height={220}

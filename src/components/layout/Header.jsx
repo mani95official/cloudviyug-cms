@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { navLinks } from '@/data/navigation';
 import { Menu, X, ChevronDown, Sparkles } from 'lucide-react';
 
+import { getAssetPath } from '@/utils/assetPath';
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,9 +44,9 @@ export default function Header() {
           {/* Logo */}
           <Link href="#home" className="d-flex align-items-center text-decoration-none">
             <Image
-              src="/images/cloudviyug-logo.svg"
+              src={getAssetPath('/images/cloudviyug-logo.svg')}
               alt="CloudViyug Logo"
-              width={120}
+              width={180}
               height={42}
               priority
               style={{ objectFit: 'contain' }}
