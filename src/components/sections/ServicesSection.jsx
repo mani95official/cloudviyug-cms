@@ -21,15 +21,15 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="py-5 position-relative" style={{ background: '#050609' }}>
+    <section id="services" className="py-5 position-relative section-bg-dark-2">
       <div className="container py-4">
         {/* Section Header */}
         <div className="text-center mb-5">
           <SectionBadge text={servicesData.badge} />
-          <h2 className="display-5 text-white fw-bold mx-auto mb-3" style={{ maxWidth: '780px', letterSpacing: '-0.02em' }}>
+          <h2 className="section-heading-lg mx-auto mb-3">
             {servicesData.title}
           </h2>
-          <p className="lead text-secondary mx-auto mb-0" style={{ maxWidth: '680px', fontSize: '1.05rem' }}>
+          <p className="section-subheading mx-auto mb-0">
             {servicesData.subtitle}
           </p>
         </div>
@@ -42,22 +42,16 @@ export default function ServicesSection() {
                 <div>
                   {/* Top Header & Icon */}
                   <div className="d-flex align-items-center justify-content-between mb-4">
-                    <h3 className="text-white fw-bold fs-4 mb-0" style={{ letterSpacing: '-0.01em' }}>
+                    <h3 className="text-white fw-bold fs-4 mb-0">
                       {svc.title}
                     </h3>
-                    <div
-                      className="rounded-3 p-2 d-flex align-items-center justify-content-center flex-shrink-0"
-                      style={{
-                        background: 'rgba(255, 87, 34, 0.08)',
-                        border: '1px solid rgba(255, 87, 34, 0.2)'
-                      }}
-                    >
+                    <div className="icon-box-orange">
                       {getServiceIcon(svc.icon)}
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-secondary mb-4" style={{ fontSize: '0.96rem', lineHeight: '1.7' }}>
+                  <p className="text-secondary mb-4 fs-6">
                     {svc.description}
                   </p>
 
@@ -65,7 +59,7 @@ export default function ServicesSection() {
                   <div className="cv-card-inner-box my-4">
                     <ul className="list-unstyled mb-0 d-flex flex-column gap-2">
                       {svc.points.map((pt, pIdx) => (
-                        <li key={pIdx} className="d-flex align-items-center gap-2 text-light" style={{ fontSize: '0.9rem' }}>
+                        <li key={pIdx} className="d-flex align-items-center gap-2 text-light fs-6">
                           <span className="text-danger fw-bold">•</span>
                           <span>{pt}</span>
                         </li>
@@ -78,8 +72,7 @@ export default function ServicesSection() {
                 <div className="pt-3 border-top border-secondary border-opacity-10 mt-auto">
                   <Link
                     href={svc.href}
-                    className="d-inline-flex align-items-center gap-2 text-danger fw-bold text-decoration-none"
-                    style={{ fontSize: '0.92rem' }}
+                    className="d-inline-flex align-items-center gap-2 text-danger fw-bold text-decoration-none fs-6"
                   >
                     <span>{svc.linkText}</span>
                     <ArrowRight size={16} />

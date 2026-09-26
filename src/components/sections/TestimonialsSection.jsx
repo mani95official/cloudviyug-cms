@@ -7,15 +7,15 @@ export default function TestimonialsSection() {
   const review = testimonialsData.reviews[0];
 
   return (
-    <section id="case-studies" className="py-5 position-relative" style={{ background: '#07080d' }}>
+    <section id="case-studies" className="py-5 position-relative section-bg-dark-1">
       <div className="container py-4">
         {/* Section Header */}
         <div className="text-center mb-5">
           <SectionBadge text={testimonialsData.badge} />
-          <h2 className="display-5 text-white fw-bold mx-auto mb-3" style={{ maxWidth: '780px', letterSpacing: '-0.02em' }}>
+          <h2 className="section-heading-lg mx-auto mb-3">
             What Our Clients <span className="gradient-text-orange">Say</span>
           </h2>
-          <p className="lead text-secondary mx-auto mb-0" style={{ maxWidth: '650px', fontSize: '1.05rem' }}>
+          <p className="section-subheading mx-auto mb-0">
             {testimonialsData.subtitle}
           </p>
         </div>
@@ -23,24 +23,10 @@ export default function TestimonialsSection() {
         {/* Featured Testimonial Card */}
         <div className="row justify-content-center">
           <div className="col-lg-10 col-xl-9">
-            <div
-              className="cv-card p-4 p-md-5 position-relative"
-              style={{
-                border: '1px solid rgba(255, 87, 34, 0.35)',
-                boxShadow: '0 25px 60px rgba(0,0,0,0.6), 0 0 35px rgba(255, 87, 34, 0.12)'
-              }}
-            >
+            <div className="cv-card testimonial-featured-card p-4 p-md-5 position-relative">
               {/* Header Badge & Rating */}
               <div className="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
-                <span
-                  className="badge rounded-pill px-3 py-2 fw-bold"
-                  style={{
-                    background: 'rgba(255, 87, 34, 0.12)',
-                    color: '#ff5722',
-                    fontSize: '0.82rem',
-                    letterSpacing: '0.08em'
-                  }}
-                >
+                <span className="testimonial-tag">
                   ✦ {review.tag}
                 </span>
                 <div className="d-flex gap-1">
@@ -56,14 +42,7 @@ export default function TestimonialsSection() {
               </h3>
 
               {/* Quote Body */}
-              <p
-                className="text-secondary mb-4"
-                style={{
-                  fontSize: '1.08rem',
-                  lineHeight: '1.8',
-                  fontStyle: 'italic'
-                }}
-              >
+              <p className="text-secondary mb-4 fs-5 fst-italic lh-lg">
                 &ldquo;{review.quote}&rdquo;
               </p>
 
@@ -71,7 +50,7 @@ export default function TestimonialsSection() {
               <div className="pt-4 border-top border-secondary border-opacity-15 d-flex align-items-center justify-content-between">
                 <div>
                   <h5 className="text-white fw-bold mb-0 fs-5">{review.author}</h5>
-                  <span className="text-danger fw-semibold" style={{ fontSize: '0.88rem' }}>
+                  <span className="text-danger fw-semibold fs-6">
                     {review.role}
                   </span>
                 </div>

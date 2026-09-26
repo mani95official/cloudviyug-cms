@@ -25,15 +25,15 @@ export default function WhyChooseUsSection() {
   };
 
   return (
-    <section id="why-us" className="py-5 position-relative" style={{ background: '#07080d' }}>
+    <section id="why-us" className="py-5 position-relative section-bg-dark-1">
       <div className="container py-4">
         {/* Section Header */}
         <div className="text-center mb-5">
           <SectionBadge text={whyUsData.badge} />
-          <h2 className="display-5 text-white fw-bold mx-auto mb-3" style={{ maxWidth: '820px', letterSpacing: '-0.02em' }}>
+          <h2 className="section-heading-lg mx-auto mb-3">
             Why Businesses Choose <span className="gradient-text-orange">CloudViyug</span>
           </h2>
-          <p className="lead text-secondary mx-auto mb-0" style={{ maxWidth: '680px', fontSize: '1.05rem' }}>
+          <p className="section-subheading mx-auto mb-0">
             {whyUsData.subtitle}
           </p>
         </div>
@@ -44,21 +44,15 @@ export default function WhyChooseUsSection() {
             <div key={feat.id} className="col-lg-4 col-md-6">
               <div className="cv-card d-flex flex-column justify-content-between h-100 p-4 p-md-5">
                 <div>
-                  <div
-                    className="rounded-3 p-3 mb-4 d-inline-flex align-items-center justify-content-center"
-                    style={{
-                      background: 'rgba(255, 87, 34, 0.08)',
-                      border: '1px solid rgba(255, 87, 34, 0.2)'
-                    }}
-                  >
+                  <div className="icon-box-orange mb-4">
                     {getIcon(feat.icon)}
                   </div>
 
-                  <h3 className="text-white fw-bold fs-4 mb-3" style={{ letterSpacing: '-0.01em' }}>
+                  <h3 className="text-white fw-bold fs-4 mb-3">
                     {feat.title}
                   </h3>
 
-                  <p className="text-secondary mb-0" style={{ fontSize: '0.94rem', lineHeight: '1.7' }}>
+                  <p className="text-secondary mb-0 fs-6">
                     {feat.description}
                   </p>
                 </div>
@@ -76,43 +70,22 @@ export default function WhyChooseUsSection() {
         </div>
 
         {/* Milestones Section Block from PDF */}
-        <div
-          className="rounded-5 p-4 p-md-5 mt-4 text-center position-relative overflow-hidden"
-          style={{
-            background: 'linear-gradient(135deg, rgba(14, 17, 26, 0.95) 0%, rgba(8, 10, 15, 0.95) 100%)',
-            border: '1px solid rgba(255, 87, 34, 0.3)',
-            boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
-          }}
-        >
+        <div className="cv-milestone-box mt-4">
           <h3 className="display-6 text-white fw-bold mb-3">
             Transforming Milestones <span className="gradient-text-orange">into Achievements</span>
           </h3>
-          <p className="text-secondary mx-auto mb-5" style={{ maxWidth: '680px', fontSize: '1.02rem', lineHeight: '1.7' }}>
+          <p className="section-subheading mx-auto mb-5">
             {whyUsData.milestonesSubtitle}
           </p>
 
           <div className="row g-4 justify-content-center">
             {whyUsData.milestones.map((m, mIdx) => (
               <div key={mIdx} className="col-lg-4 col-md-6">
-                <div
-                  className="p-4 rounded-4"
-                  style={{
-                    background: 'rgba(0, 0, 0, 0.55)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)'
-                  }}
-                >
-                  <div
-                    className="fw-bold mb-2"
-                    style={{
-                      fontSize: '3.4rem',
-                      fontFamily: 'var(--font-heading)',
-                      color: '#ff5722',
-                      lineHeight: 1
-                    }}
-                  >
+                <div className="milestone-counter-box">
+                  <div className="milestone-value">
                     {m.value}
                   </div>
-                  <div className="text-white fw-semibold" style={{ fontSize: '1rem' }}>
+                  <div className="text-white fw-semibold fs-6">
                     {m.label}
                   </div>
                 </div>

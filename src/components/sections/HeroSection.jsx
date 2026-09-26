@@ -7,159 +7,123 @@ import { getAssetPath } from '@/utils/assetPath';
 
 export default function HeroSection() {
   return (
-    <section
-      id="home"
-      className="position-relative overflow-hidden bg-grid-mesh d-flex flex-column justify-content-center"
-      style={{
-        paddingTop: '160px',
-        paddingBottom: '60px',
-        minHeight: '100vh'
-      }}
-    >
-      {/* Floating 3D Geometric Shape Left */}
-      <div
-        className="position-absolute d-none d-lg-block animate-float-1 pointer-events-none"
-        style={{ top: '16%', left: '3%', zIndex: 1, opacity: 0.8 }}
-      >
+    <section id="home" className="hero-section hero-exact-bg">
+      {/* Radial Concentric Arcs / Orbital Dome Lines */}
+      <div className="hero-radial-rings" aria-hidden="true">
+        <svg
+          viewBox="0 0 1600 1000"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="hero-rings-svg"
+        >
+          <circle cx="800" cy="580" r="170" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+          <circle cx="800" cy="580" r="310" stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
+          <circle cx="800" cy="580" r="460" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+          <circle cx="800" cy="580" r="620" stroke="rgba(255,255,255,0.05)" strokeWidth="1" strokeDasharray="6 6" />
+          <circle cx="800" cy="580" r="790" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+          <circle cx="800" cy="580" r="980" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+        </svg>
+      </div>
+
+      {/* 4 Floating 3D Geometric Shapes (Exact Matching from PDF/Screenshots) */}
+      {/* Top-Left: Glassy angled prism */}
+      <div className="hero-shape-tl d-none d-lg-block">
         <Image
           src={getAssetPath('/images/section-bg-shape-4.png')}
-          alt="Floating glowing asset"
-          width={110}
-          height={110}
-          style={{ objectFit: 'contain' }}
+          alt="Floating 3D Asset"
+          width={115}
+          height={115}
+          priority
         />
       </div>
 
-      {/* Floating 3D Geometric Shape Right */}
-      <div
-        className="position-absolute d-none d-lg-block animate-float-2 pointer-events-none"
-        style={{ top: '22%', right: '4%', zIndex: 1, opacity: 0.8 }}
-      >
+      {/* Top-Right: Metallic 3D curved knot */}
+      <div className="hero-shape-tr d-none d-lg-block">
         <Image
           src={getAssetPath('/images/section-bg-shape-2.png')}
-          alt="Floating glowing asset"
-          width={100}
-          height={100}
-          style={{ objectFit: 'contain' }}
+          alt="Floating 3D Asset"
+          width={110}
+          height={110}
+          priority
         />
       </div>
 
-      {/* Central Ambient Glow */}
-      <div
-        className="position-absolute"
-        style={{
-          top: '20%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '750px',
-          height: '420px',
-          background: 'radial-gradient(ellipse, rgba(255, 87, 34, 0.16) 0%, rgba(139, 92, 246, 0.12) 45%, transparent 70%)',
-          filter: 'blur(50px)',
-          pointerEvents: 'none',
-          zIndex: 0
-        }}
-      />
+      {/* Bottom-Left: Metallic 3D cross */}
+      <div className="hero-shape-bl d-none d-lg-block">
+        <Image
+          src={getAssetPath('/images/section-bg-shape-1.png')}
+          alt="Floating 3D Asset"
+          width={100}
+          height={100}
+        />
+      </div>
 
-      <div className="container position-relative" style={{ zIndex: 2 }}>
+      {/* Bottom-Right: Metallic coiled spring */}
+      <div className="hero-shape-br d-none d-lg-block">
+        <Image
+          src={getAssetPath('/images/section-bg-shape-3.png')}
+          alt="Floating 3D Asset"
+          width={105}
+          height={105}
+        />
+      </div>
+
+      {/* Content Container */}
+      <div className="container position-relative" style={{ zIndex: 3 }}>
         <div className="row justify-content-center text-center">
           <div className="col-xl-10 col-lg-11">
             {/* Top Pill Badge */}
-            <div
-              className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-4"
-              style={{
-                background: 'rgba(255, 87, 34, 0.08)',
-                border: '1px solid rgba(255, 87, 34, 0.25)',
-                color: '#ff8a50',
-                fontSize: '0.85rem',
-                fontWeight: 700,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase'
-              }}
-            >
-              <span>✦ CLOUD &amp; DEVOPS EXPERTS ✦</span>
+            <div>
+              <div className="hero-pill-badge">
+                <span>✦ CLOUD &amp; DEVOPS EXPERTS ✦</span>
+              </div>
             </div>
 
-            {/* Main Headline from PDF */}
-            <h1
-              className="display-4 fw-bolder text-white mb-4"
-              style={{
-                lineHeight: 1.18,
-                letterSpacing: '-0.03em',
-                fontWeight: 800
-              }}
-            >
+            {/* Main Headline with exact screenshot gradients */}
+            <h1 className="hero-heading">
               AWS Cloud Migration,{' '}
               <span className="gradient-text-orange">DevOps</span> &amp;{' '}
               <span className="gradient-text-ai">Managed Services</span> Experts
             </h1>
 
-            {/* Subheading from PDF */}
-            <p
-              className="lead text-secondary mx-auto mb-4"
-              style={{
-                maxWidth: '780px',
-                fontSize: '1.15rem',
-                lineHeight: 1.7
-              }}
-            >
+            {/* Subheading */}
+            <p className="hero-subtitle">
               Helping businesses modernize infrastructure, automate deployments, optimize cloud costs, and achieve 24/7 operational excellence.
             </p>
 
             {/* Delivering Scalability Dynamic Tagline */}
-            <div className="mb-4">
-              <span className="text-secondary fw-semibold" style={{ fontSize: '0.95rem' }}>
-                Delivering{' '}
-                <span className="gradient-text-orange fw-bold">Scalability</span>
-              </span>
+            <div className="hero-tagline">
+              <span>Delivering </span>
+              <span className="gradient-text-orange fw-bold">Scalability</span>
             </div>
 
-            {/* CTA Buttons from PDF */}
-            <div className="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-5">
-              <Link href="#contact" className="btn-cv-gradient text-decoration-none px-4 py-3">
-                <span>Get Free Consultation</span>
-                <ArrowRight size={16} />
+            {/* Exact Action Buttons matching Screenshot */}
+            <div className="hero-btn-group">
+              <Link href="#contact" className="btn-cv-outline">
+                <span>Get Started Today</span>
               </Link>
-              <Link href="#case-studies" className="btn-cv-outline text-decoration-none px-4 py-3">
-                <span>View Case Studies</span>
+              <Link href="#case-studies" className="btn-cv-gradient">
+                <span>Join Now</span>
+                <ArrowRight size={16} />
               </Link>
             </div>
 
             {/* AWS Partner Badge Card */}
-            <div className="d-flex justify-content-center mb-5">
-              <div
-                className="d-inline-flex align-items-center gap-3 px-4 py-2 rounded-4"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.03)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  backdropFilter: 'blur(10px)',
-                  boxShadow: '0 8px 25px rgba(0,0,0,0.3)'
-                }}
-              >
-                <span className="fw-bolder text-warning fs-5" style={{ letterSpacing: '0.05em' }}>
-                  aws
-                </span>
-                <div className="text-start border-start border-secondary border-opacity-25 ps-3">
-                  <div className="fw-bolder text-white text-uppercase" style={{ fontSize: '0.88rem', letterSpacing: '0.08em' }}>
-                    PARTNER
-                  </div>
-                  <div className="text-secondary" style={{ fontSize: '0.75rem' }}>
-                    Advanced Tier Services
-                  </div>
+            <div className="d-flex justify-content-center">
+              <div className="hero-aws-badge-card">
+                <span className="hero-aws-logo-text">aws</span>
+                <div className="hero-aws-divider">
+                  <div className="hero-aws-partner-title">PARTNER</div>
+                  <div className="hero-aws-partner-sub">Advanced Tier Services</div>
                 </div>
               </div>
             </div>
 
             {/* Ticker Badges Bar from PDF */}
-            <div
-              className="p-3 rounded-4 mt-4"
-              style={{
-                background: 'rgba(255, 255, 255, 0.02)',
-                border: '1px solid rgba(255, 255, 255, 0.06)'
-              }}
-            >
+            <div className="hero-ticker-box">
               <div className="d-flex flex-wrap align-items-center justify-content-center gap-3 gap-md-4">
                 {tickerBadges.map((badge, idx) => (
-                  <div key={idx} className="d-flex align-items-center gap-2 text-secondary fw-medium" style={{ fontSize: '0.88rem' }}>
+                  <div key={idx} className="d-flex align-items-center gap-2 text-secondary fw-medium fs-6">
                     <CheckCircle2 size={16} className="text-danger flex-shrink-0" />
                     <span className="text-light">{badge}</span>
                   </div>

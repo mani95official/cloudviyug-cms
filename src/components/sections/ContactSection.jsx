@@ -38,15 +38,15 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-5 position-relative" style={{ background: '#050609' }}>
+    <section id="contact" className="py-5 position-relative section-bg-dark-2">
       <div className="container py-4">
         {/* Section Header */}
         <div className="text-center mb-5">
           <SectionBadge text={contactData.badge} />
-          <h2 className="display-5 text-white fw-bold mx-auto mb-3" style={{ maxWidth: '820px', letterSpacing: '-0.02em' }}>
+          <h2 className="section-heading-lg mx-auto mb-3">
             Book a <span className="gradient-text-orange">Free Consultation</span>
           </h2>
-          <p className="lead text-secondary mx-auto mb-0" style={{ maxWidth: '680px', fontSize: '1.05rem' }}>
+          <p className="section-subheading mx-auto mb-0">
             {contactData.subtitle}
           </p>
         </div>
@@ -57,65 +57,53 @@ export default function ContactSection() {
             <div className="cv-card p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
               <div>
                 <h3 className="text-white fw-bold fs-4 mb-3">{contactData.infoTitle}</h3>
-                <p className="text-secondary mb-4" style={{ fontSize: '0.96rem', lineHeight: '1.7' }}>
+                <p className="text-secondary mb-4 fs-6">
                   {contactData.infoDescription}
                 </p>
 
                 {/* Contact List */}
                 <div className="d-flex flex-column gap-3 mb-4">
                   <div className="d-flex align-items-center gap-3">
-                    <div
-                      className="rounded-3 p-2 d-flex align-items-center justify-content-center"
-                      style={{ background: 'rgba(255, 87, 34, 0.1)', color: '#ff5722' }}
-                    >
+                    <div className="icon-box-orange">
                       <Phone size={18} />
                     </div>
                     <div>
-                      <div className="text-secondary" style={{ fontSize: '0.78rem' }}>PHONE</div>
-                      <a href={`tel:${contactData.phone}`} className="text-white fw-semibold text-decoration-none">
+                      <div className="text-secondary fs-7 text-uppercase fw-semibold">PHONE</div>
+                      <a href={`tel:${contactData.phone}`} className="text-white fw-semibold text-decoration-none fs-6">
                         {contactData.phone}
                       </a>
                     </div>
                   </div>
 
                   <div className="d-flex align-items-center gap-3">
-                    <div
-                      className="rounded-3 p-2 d-flex align-items-center justify-content-center"
-                      style={{ background: 'rgba(255, 87, 34, 0.1)', color: '#ff5722' }}
-                    >
+                    <div className="icon-box-orange">
                       <Mail size={18} />
                     </div>
                     <div>
-                      <div className="text-secondary" style={{ fontSize: '0.78rem' }}>EMAIL</div>
-                      <a href={`mailto:${contactData.email}`} className="text-white fw-semibold text-decoration-none">
+                      <div className="text-secondary fs-7 text-uppercase fw-semibold">EMAIL</div>
+                      <a href={`mailto:${contactData.email}`} className="text-white fw-semibold text-decoration-none fs-6">
                         {contactData.email}
                       </a>
                     </div>
                   </div>
 
                   <div className="d-flex align-items-center gap-3">
-                    <div
-                      className="rounded-3 p-2 d-flex align-items-center justify-content-center"
-                      style={{ background: 'rgba(255, 87, 34, 0.1)', color: '#ff5722' }}
-                    >
+                    <div className="icon-box-orange">
                       <MapPin size={18} />
                     </div>
                     <div>
-                      <div className="text-secondary" style={{ fontSize: '0.78rem' }}>ADDRESS</div>
-                      <div className="text-white fw-semibold">{contactData.shortAddress}</div>
+                      <div className="text-secondary fs-7 text-uppercase fw-semibold">ADDRESS</div>
+                      <div className="text-white fw-semibold fs-6">{contactData.shortAddress}</div>
                     </div>
                   </div>
 
                   <div className="d-flex align-items-center gap-3">
-                    <div
-                      className="rounded-3 p-2 d-flex align-items-center justify-content-center"
-                      style={{ background: 'rgba(255, 87, 34, 0.1)', color: '#ff5722' }}
-                    >
+                    <div className="icon-box-orange">
                       <Clock size={18} />
                     </div>
                     <div>
-                      <div className="text-secondary" style={{ fontSize: '0.78rem' }}>BUSINESS HOURS</div>
-                      <div className="text-white fw-semibold">{contactData.businessHours}</div>
+                      <div className="text-secondary fs-7 text-uppercase fw-semibold">BUSINESS HOURS</div>
+                      <div className="text-white fw-semibold fs-6">{contactData.businessHours}</div>
                     </div>
                   </div>
                 </div>
@@ -126,7 +114,7 @@ export default function ContactSection() {
                 <h5 className="text-white fw-bold fs-6 mb-3">What to Expect:</h5>
                 <ul className="list-unstyled mb-0 d-flex flex-column gap-2">
                   {contactData.expectations.map((exp, idx) => (
-                    <li key={idx} className="d-flex align-items-center gap-2 text-secondary" style={{ fontSize: '0.88rem' }}>
+                    <li key={idx} className="d-flex align-items-center gap-2 text-secondary fs-6">
                       <CheckCircle2 size={16} className="text-danger flex-shrink-0" />
                       <span>{exp}</span>
                     </li>
@@ -153,7 +141,7 @@ export default function ContactSection() {
                 <form onSubmit={handleSubmit} className="d-flex flex-column gap-3">
                   <div className="row g-3">
                     <div className="col-md-6">
-                      <label className="text-secondary fw-semibold mb-1" style={{ fontSize: '0.82rem' }}>
+                      <label className="form-label-custom">
                         FULL NAME *
                       </label>
                       <input
@@ -162,11 +150,11 @@ export default function ContactSection() {
                         required
                         value={form.fullName}
                         onChange={(e) => setForm({ ...form, fullName: e.target.value })}
-                        className="form-control bg-dark border-secondary border-opacity-25 text-white shadow-none py-2 px-3 rounded-3"
+                        className="form-control form-control-custom"
                       />
                     </div>
                     <div className="col-md-6">
-                      <label className="text-secondary fw-semibold mb-1" style={{ fontSize: '0.82rem' }}>
+                      <label className="form-label-custom">
                         COMPANY NAME
                       </label>
                       <input
@@ -174,14 +162,14 @@ export default function ContactSection() {
                         placeholder="Your Company"
                         value={form.companyName}
                         onChange={(e) => setForm({ ...form, companyName: e.target.value })}
-                        className="form-control bg-dark border-secondary border-opacity-25 text-white shadow-none py-2 px-3 rounded-3"
+                        className="form-control form-control-custom"
                       />
                     </div>
                   </div>
 
                   <div className="row g-3">
                     <div className="col-md-6">
-                      <label className="text-secondary fw-semibold mb-1" style={{ fontSize: '0.82rem' }}>
+                      <label className="form-label-custom">
                         EMAIL ADDRESS *
                       </label>
                       <input
@@ -190,11 +178,11 @@ export default function ContactSection() {
                         required
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className="form-control bg-dark border-secondary border-opacity-25 text-white shadow-none py-2 px-3 rounded-3"
+                        className="form-control form-control-custom"
                       />
                     </div>
                     <div className="col-md-6">
-                      <label className="text-secondary fw-semibold mb-1" style={{ fontSize: '0.82rem' }}>
+                      <label className="form-label-custom">
                         PHONE NUMBER *
                       </label>
                       <input
@@ -203,20 +191,20 @@ export default function ContactSection() {
                         required
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="form-control bg-dark border-secondary border-opacity-25 text-white shadow-none py-2 px-3 rounded-3"
+                        className="form-control form-control-custom"
                       />
                     </div>
                   </div>
 
                   <div className="row g-3">
                     <div className="col-md-6">
-                      <label className="text-secondary fw-semibold mb-1" style={{ fontSize: '0.82rem' }}>
+                      <label className="form-label-custom">
                         SERVICE REQUIRED
                       </label>
                       <select
                         value={form.service}
                         onChange={(e) => setForm({ ...form, service: e.target.value })}
-                        className="form-select bg-dark border-secondary border-opacity-25 text-white shadow-none py-2 px-3 rounded-3"
+                        className="form-select form-select-custom"
                       >
                         <option value="">Select a service...</option>
                         {contactData.servicesOptions.map((svc, i) => (
@@ -227,13 +215,13 @@ export default function ContactSection() {
                       </select>
                     </div>
                     <div className="col-md-6">
-                      <label className="text-secondary fw-semibold mb-1" style={{ fontSize: '0.82rem' }}>
+                      <label className="form-label-custom">
                         BUDGET RANGE
                       </label>
                       <select
                         value={form.budget}
                         onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                        className="form-select bg-dark border-secondary border-opacity-25 text-white shadow-none py-2 px-3 rounded-3"
+                        className="form-select form-select-custom"
                       >
                         <option value="">Select budget...</option>
                         {contactData.budgetOptions.map((b, i) => (
@@ -246,7 +234,7 @@ export default function ContactSection() {
                   </div>
 
                   <div>
-                    <label className="text-secondary fw-semibold mb-1" style={{ fontSize: '0.82rem' }}>
+                    <label className="form-label-custom">
                       LOCATION
                     </label>
                     <input
@@ -254,12 +242,12 @@ export default function ContactSection() {
                       placeholder="City, Country"
                       value={form.location}
                       onChange={(e) => setForm({ ...form, location: e.target.value })}
-                      className="form-control bg-dark border-secondary border-opacity-25 text-white shadow-none py-2 px-3 rounded-3"
+                      className="form-control form-control-custom"
                     />
                   </div>
 
                   <div>
-                    <label className="text-secondary fw-semibold mb-1" style={{ fontSize: '0.82rem' }}>
+                    <label className="form-label-custom">
                       PROJECT DESCRIPTION *
                     </label>
                     <textarea
@@ -268,8 +256,7 @@ export default function ContactSection() {
                       required
                       value={form.description}
                       onChange={(e) => setForm({ ...form, description: e.target.value })}
-                      className="form-control bg-dark border-secondary border-opacity-25 text-white shadow-none py-2 px-3 rounded-3"
-                      style={{ resize: 'none' }}
+                      className="form-control form-control-custom"
                     />
                   </div>
 
@@ -278,7 +265,7 @@ export default function ContactSection() {
                     <Send size={16} />
                   </button>
 
-                  <div className="text-center text-secondary mt-2" style={{ fontSize: '0.8rem' }}>
+                  <div className="text-center text-secondary mt-2 fs-7">
                     By submitting, you agree to our Privacy Policy.
                   </div>
                 </form>

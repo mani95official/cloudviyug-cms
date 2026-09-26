@@ -27,34 +27,21 @@ export default function CapabilitiesSection() {
   };
 
   return (
-    <section className="py-5 position-relative" style={{ background: '#07080d' }}>
+    <section className="py-5 position-relative section-bg-dark-1">
       <div className="container py-4">
         {/* Section Title from PDF */}
         <div className="text-center mb-5">
-          <h2 className="display-6 text-white fw-bold mb-3" style={{ letterSpacing: '-0.02em' }}>
+          <h2 className="display-6 text-white fw-bold mb-3">
             Our Major <span className="gradient-text-orange">Capabilities</span>
           </h2>
-          <div
-            className="mx-auto"
-            style={{
-              width: '60px',
-              height: '3px',
-              background: 'linear-gradient(90deg, #ff5722, #8b5cf6)',
-              borderRadius: '2px'
-            }}
-          />
+          <div className="mx-auto bg-danger rounded-pill" style={{ width: '60px', height: '3px' }} />
         </div>
 
         {/* 8 Capabilities Grid */}
         <div className="row g-4 justify-content-center">
           {majorCapabilities.map((cap, idx) => (
             <div key={idx} className="col-lg-3 col-md-4 col-6">
-              <div
-                className="cv-card p-4 d-flex flex-column align-items-center justify-content-center text-center h-100 transition-all"
-                style={{
-                  minHeight: '140px'
-                }}
-              >
+              <div className="cv-card p-4 d-flex flex-column align-items-center justify-content-center text-center h-100">
                 <div className="mb-3">{getTechIcon(cap.name)}</div>
                 <h4 className="text-white fw-bold fs-6 mb-0">{cap.label}</h4>
               </div>

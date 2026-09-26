@@ -23,21 +23,19 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-5 position-relative" style={{ background: '#07080d' }}>
+    <section id="about" className="py-5 position-relative section-bg-dark-1">
       <div className="container py-4">
         <div className="row g-5 align-items-center">
           {/* Left Column: Image / Illustration Card */}
           <div className="col-lg-5">
-            <div
-              className="cv-card p-4 p-md-5 d-flex flex-column justify-content-between text-center position-relative overflow-hidden"
-              style={{ minHeight: '440px' }}
-            >
+            <div className="cv-card p-4 p-md-5 d-flex flex-column justify-content-between text-center position-relative overflow-hidden">
               <div className="d-flex align-items-center justify-content-center flex-grow-1 py-3">
                 <Image
                   src={getAssetPath('/images/what-we-do-img.png')}
                   alt="Cloud-First People-Focused"
                   width={340}
                   height={220}
+                  priority
                   style={{ objectFit: 'contain', maxHeight: '200px' }}
                 />
               </div>
@@ -54,10 +52,10 @@ export default function AboutSection() {
           {/* Right Column: Copy & 4 Metric Cards */}
           <div className="col-lg-7">
             <SectionBadge text={aboutData.badge} />
-            <h2 className="display-5 text-white fw-bold mb-4" style={{ letterSpacing: '-0.02em', lineHeight: 1.25 }}>
+            <h2 className="section-heading-lg mb-4">
               Certified Cloud Experts <span className="gradient-text-orange">You Can Trust</span>
             </h2>
-            <p className="text-secondary mb-5" style={{ fontSize: '1.05rem', lineHeight: '1.75' }}>
+            <p className="section-subheading mb-5">
               {aboutData.description}
             </p>
 
@@ -67,28 +65,14 @@ export default function AboutSection() {
                 <div key={idx} className="col-sm-6">
                   <div className="cv-card p-3 p-md-4 d-flex align-items-center justify-content-between">
                     <div>
-                      <div
-                        className="fw-bolder mb-1"
-                        style={{
-                          fontSize: '2.2rem',
-                          fontFamily: 'var(--font-heading)',
-                          color: '#ff5722',
-                          lineHeight: 1
-                        }}
-                      >
+                      <div className="metric-value-lg mb-1">
                         {metric.value}
                       </div>
-                      <div className="text-secondary fw-medium" style={{ fontSize: '0.88rem' }}>
+                      <div className="text-secondary fw-medium fs-6">
                         {metric.label}
                       </div>
                     </div>
-                    <div
-                      className="rounded-3 p-2 d-flex align-items-center justify-content-center"
-                      style={{
-                        background: 'rgba(255, 87, 34, 0.08)',
-                        border: '1px solid rgba(255, 87, 34, 0.2)'
-                      }}
-                    >
+                    <div className="icon-box-orange">
                       {getIcon(idx)}
                     </div>
                   </div>
