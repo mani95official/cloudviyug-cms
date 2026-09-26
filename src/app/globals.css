@@ -1,0 +1,393 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-main: #06070a;
+  --bg-card: #0d0f17;
+  --bg-card-hover: #131622;
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glass-hover: rgba(255, 87, 34, 0.4);
+  
+  --primary-accent: #ff5722;
+  --primary-glow: rgba(255, 87, 34, 0.35);
+  --gradient-accent: linear-gradient(135deg, #ff5722 0%, #d946ef 50%, #6366f1 100%);
+  --gradient-orange: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+  --gradient-purple-blue: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Custom Selection */
+::selection {
+  background: var(--primary-accent);
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #06070a;
+}
+::-webkit-scrollbar-thumb {
+  background: #232736;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-accent);
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle background grid pattern */
+.bg-grid-mesh {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 100% 40%, rgba(255, 87, 34, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 0% 70%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* Pill Badges */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ff7844;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  margin-bottom: 1.25rem;
+}
+
+.section-badge .star-icon {
+  color: #ff5722;
+  font-size: 0.85rem;
+}
+
+/* Gradient Text Utilities */
+.gradient-text-orange {
+  background: linear-gradient(135deg, #ff5722 0%, #ff8a50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-ai {
+  background: linear-gradient(135deg, #c084fc 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-hero {
+  background: linear-gradient(135deg, #ff6b35 0%, #f43f5e 40%, #a855f7 75%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button Styles */
+.btn-cv-gradient {
+  background: linear-gradient(135deg, #ff5722 0%, #e040fb 50%, #7c4dff 100%);
+  color: #ffffff !important;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 20px rgba(255, 87, 34, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-cv-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #7c4dff 0%, #e040fb 50%, #ff5722 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.btn-cv-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 87, 34, 0.4);
+}
+
+.btn-cv-gradient:hover::before {
+  opacity: 1;
+}
+
+.btn-cv-outline {
+  background: rgba(255, 255, 255, 0.03);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-full);
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-cv-outline:hover {
+  background: rgba(255, 87, 34, 0.1);
+  border-color: rgba(255, 87, 34, 0.5);
+  box-shadow: 0 0 25px rgba(255, 87, 34, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Glassmorphism Cards with Signature Gradient Background & Grid Mesh */
+.cv-card, .cv-card-gradient {
+  background-color: #08090f;
+  background-image: 
+    radial-gradient(ellipse 75% 65% at 5% 5%, rgba(26, 54, 128, 0.42) 0%, rgba(20, 32, 70, 0.15) 45%, transparent 70%),
+    radial-gradient(circle at 92% 92%, rgba(255, 87, 34, 0.16) 0%, rgba(255, 87, 34, 0.04) 40%, transparent 60%),
+    linear-gradient(rgba(255, 87, 34, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 87, 34, 0.06) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px;
+  background-position: 0 0, 0 0, bottom right, bottom right;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+  padding: 32px 28px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.cv-card:hover, .cv-card-gradient:hover {
+  border-color: rgba(255, 87, 34, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 87, 34, 0.15);
+  background-image: 
+    radial-gradient(ellipse 75% 65% at 5% 5%, rgba(37, 72, 168, 0.52) 0%, rgba(20, 32, 70, 0.2) 45%, transparent 70%),
+    radial-gradient(circle at 92% 92%, rgba(255, 87, 34, 0.25) 0%, rgba(255, 87, 34, 0.06) 40%, transparent 60%),
+    linear-gradient(rgba(255, 87, 34, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 87, 34, 0.1) 1px, transparent 1px);
+}
+
+.cv-card-inner-box {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px 22px;
+  backdrop-filter: blur(12px);
+  margin-top: 24px;
+  transition: all 0.3s ease;
+}
+
+.cv-card-inner-box:hover {
+  border-color: rgba(255, 87, 34, 0.2);
+}
+
+.cv-card-highlight {
+  position: relative;
+}
+
+.cv-card-highlight::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff5722, #8b5cf6, transparent);
+  opacity: 0.8;
+}
+
+/* Floating animation keyframes */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(-3deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-1 {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Logo Marquee */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 48px;
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Accordion Custom Styles */
+.custom-accordion .accordion-item {
+  background: #0d0f17;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-md) !important;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .accordion-item:hover,
+.custom-accordion .accordion-item.active {
+  border-color: rgba(255, 87, 34, 0.35);
+  background: #11131e;
+}
+
+.custom-accordion .accordion-button {
+  background: transparent;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 20px 24px;
+  box-shadow: none !important;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+  color: #ff6b35;
+  background: rgba(255, 87, 34, 0.04);
+}
+
+.custom-accordion .accordion-button::after {
+  filter: invert(1);
+}
+
+.custom-accordion .accordion-body {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 0 24px 20px 24px;
+}
+
+/* Floating custom cursor */
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ff5722;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+}
+
+.custom-cursor-circle {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 87, 34, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+}
+
+@media (max-width: 991px) {
+  .custom-cursor-dot, .custom-cursor-circle {
+    display: none !important;
+  }
+}

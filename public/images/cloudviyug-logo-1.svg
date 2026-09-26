@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 50" fill="none">
+  <defs>
+    <linearGradient id="cvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5722"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="cvAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6B35"/>
+      <stop offset="100%" stop-color="#FFA07A"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Modern Cloud + AI Neural Symbol -->
+  <g transform="translate(4, 6)">
+    <circle cx="19" cy="19" r="18" fill="#14151B" stroke="url(#cvGrad)" stroke-width="1.8"/>
+    <path d="M12 24C10.5 24 9 22.8 9 21C9 19.5 10.2 18.2 11.7 18.1C12.4 15.2 15 13 18.2 13C21.9 13 25 15.8 25.4 19.5C26.9 19.8 28 21.1 28 22.7C28 24.5 26.5 26 24.7 26H13" 
+          stroke="url(#cvGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="19" cy="19" r="2.5" fill="#FF5722"/>
+    <circle cx="14" cy="20" r="1.5" fill="#8B5CF6"/>
+    <circle cx="23" cy="18" r="1.5" fill="#3B82F6"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="52" y="32" font-family="'Manrope', 'Inter', sans-serif" font-weight="800" font-size="24" fill="#FFFFFF" letter-spacing="-0.5">
+    Cloud<tspan fill="url(#cvAccent)">Viyug</tspan><tspan fill="#FF5722">.</tspan>
+  </text>
+</svg>
